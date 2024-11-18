@@ -4,12 +4,14 @@ const SLOW_TIME_SCALE = 0.3
 const NORMAL_TIME_SCALE = 1
 
 @onready var timer = $Timer
+@onready var death_sound = $DeathSound
 
 func _on_body_entered(body):
 	print("You loose.")
 	Engine.time_scale = SLOW_TIME_SCALE
 	body.get_node("CollisionShape2D").queue_free()
 	timer.start()
+	death_sound.play()
 	
 
 func _on_timer_timeout():
