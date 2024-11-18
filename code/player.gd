@@ -15,6 +15,7 @@ const PLAYER_STATE_ROLL_JUMP = "roll_jump"
 const PLAYER_STATE_RUN = "run"
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var jump_sound = $JumpSound
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -23,6 +24,7 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed(KEY_A) and is_on_floor():
+		jump_sound.play()
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
