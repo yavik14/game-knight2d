@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 130.0
+const RUN_SPEED = 200.0
 const JUMP_VELOCITY = -300.0
 const DIRECTION_NONE = 0
 
@@ -47,7 +48,7 @@ func _physics_process(delta):
 			animated_sprite_2d.play(PLAYER_STATE_ROLL_JUMP)
 
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * (RUN_SPEED if Input.is_action_pressed("run") else SPEED)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
