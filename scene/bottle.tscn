@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://jtncp6lh17iw"]
+
+[ext_resource type="Texture2D" uid="uid://da68nfv3ghcin" path="res://resources/sprites/world_tileset.png" id="1_t0xfy"]
+[ext_resource type="Script" path="res://code/bottle.gd" id="2_n22hb"]
+[ext_resource type="AudioStream" uid="uid://dtdiv2qu0lyck" path="res://resources/sounds/power_up.wav" id="3_b0t4w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vcda7"]
+radius = 5.0
+height = 16.0
+
+[node name="Bottle" type="Sprite2D"]
+texture = ExtResource("1_t0xfy")
+region_enabled = true
+region_rect = Rect2(0, 128, 16, 16)
+script = ExtResource("2_n22hb")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_vcda7")
+
+[node name="PowerupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_b0t4w")
+bus = &"Effects"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="PowerupSound" to="." method="_on_powerup_sound_finished"]

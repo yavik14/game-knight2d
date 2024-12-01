@@ -18,6 +18,14 @@ const PLAYER_STATE_RUN = "run"
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var jump_sound = $JumpSound
 
+var can_run = false
+
+signal run_effect
+
+func emit_run_effect():
+	run_effect.emit()
+	print("Run effect emited")
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -48,7 +56,7 @@ func _physics_process(delta):
 			animated_sprite_2d.play(PLAYER_STATE_ROLL_JUMP)
 
 	if direction:
-		velocity.x = direction * (RUN_SPEED if Input.is_action_pressed("run") else SPEED)
+		velocity.x = direction * (RUN_SPEED if can_run or Input.is_action_pressed("run") else SPEED)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
