@@ -7,9 +7,11 @@ extends Node
 @export var duration: float = 0.5
 
 func _ready() -> void:
-	coin.body_entered.connect(_on_body_entered)
+	# coin.body_entered.connect(_on_body_entered)
+	coin.play_destruction_animation.connect(_play_destruction_animation)
+	coin.selfdestruction = false
 
-func _on_body_entered(_body):
+func _play_destruction_animation():
 	var tween = get_tree().create_tween().bind_node(coin).set_parallel(true)
 	# Animacion con transposicion hacia arriba de la moneda
 	tween.tween_property(coin, "position", coin.position + Vector2.UP * distance, duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
