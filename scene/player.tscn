@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://ck4joc4obakjh"]
+[gd_scene load_steps=33 format=3 uid="uid://ck4joc4obakjh"]
 
 [ext_resource type="Texture2D" uid="uid://daf33neoy11pb" path="res://resources/sprites/knight.png" id="1_jqhj2"]
 [ext_resource type="Script" path="res://code/player.gd" id="1_qxeqf"]
 [ext_resource type="AudioStream" uid="uid://d00pwo5ule1nq" path="res://resources/sounds/jump.wav" id="3_ghs45"]
 [ext_resource type="Script" path="res://code/run_effect.gd" id="4_pnqbe"]
+[ext_resource type="Material" uid="uid://da4byuerb2p1k" path="res://material/material_powerupl.tres" id="5_svnq1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hab2q"]
 atlas = ExtResource("1_jqhj2")
@@ -226,7 +227,7 @@ stream = ExtResource("3_ghs45")
 
 [node name="RunEffect" type="Node" parent="."]
 script = ExtResource("4_pnqbe")
-effect_time = 2
+effect_material = ExtResource("5_svnq1")
 
 [node name="TimerRunEffect" type="Timer" parent="RunEffect"]
 one_shot = true

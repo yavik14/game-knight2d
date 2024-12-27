@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://da4byuerb2p1k"]
+
+[ext_resource type="Shader" uid="uid://ct2eciquefbwv" path="res://shaders/shader_powerup.tres" id="1_ayax1"]
+
+[resource]
+shader = ExtResource("1_ayax1")
+shader_parameter/ColorParameter = Color(1, 1, 0, 1)
+shader_parameter/FloatParameter = 10.0
