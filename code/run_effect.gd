@@ -9,7 +9,6 @@ extends Node
 const DEFAULT_POWERUP_EFFECT_PITCH: float = 1
 @export var powerup_effect_pitch: float = 2
 
-
 func _ready():
 	player.run_effect.connect(_on_player_run_effect)
 	timer_run_effect.timeout.connect(_on_timeout)
