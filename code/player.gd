@@ -3,10 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const RUN_SPEED = 200.0
-const JUMP_VELOCITY = -300.0
 const DIRECTION_NONE = 0
 
-const KEY_A = "jump"
 const KEY_LEFT = "move_left"
 const KEY_RIGHT = "move_right"
 
@@ -16,10 +14,8 @@ const PLAYER_STATE_ROLL_JUMP = "roll_jump"
 const PLAYER_STATE_RUN = "run"
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
-@onready var jump_sound = $JumpSound
 
 var can_run = false
-
 signal run_effect
 
 func emit_run_effect():
@@ -30,11 +26,6 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed(KEY_A) and is_on_floor():
-		jump_sound.play()
-		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -62,5 +53,5 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-func activate_material(material: Material):
-	animated_sprite_2d.material = material
+func activate_material(new_material: Material):
+	animated_sprite_2d.material = new_material
