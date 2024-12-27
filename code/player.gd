@@ -61,3 +61,6 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+func activate_material(material: Material):
+	animated_sprite_2d.material = material
