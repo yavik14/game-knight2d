@@ -237,3 +237,5 @@ script = ExtResource("5_oo6l3")
 stream = ExtResource("3_ghs45")
 
 [node name="CoyoteTimeTimer" type="Timer" parent="Jump"]
+
+[node name="JumpBufferTimer" type="Timer" parent="Jump"]
