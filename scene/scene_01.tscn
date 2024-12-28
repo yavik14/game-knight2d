@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b1qfrxi05tiot"]
+[gd_scene load_steps=18 format=4 uid="uid://b1qfrxi05tiot"]
 
 [ext_resource type="Script" path="res://code/game_manager.gd" id="1_42hhb"]
 [ext_resource type="PackedScene" uid="uid://ck4joc4obakjh" path="res://scene/player.tscn" id="1_fw30o"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://brf3wstfjvxmt" path="res://scene/enemy.tscn" id="6_2s22d"]
 [ext_resource type="FontFile" uid="uid://c6qeer1ul2lvv" path="res://resources/fonts/PixelOperator8.ttf" id="7_lria7"]
 [ext_resource type="PackedScene" uid="uid://jtncp6lh17iw" path="res://scene/bottle.tscn" id="10_2yoxf"]
+[ext_resource type="PackedScene" uid="uid://bh0h6ms6cvfv1" path="res://scene/bouncy.tscn" id="11_2afym"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f71cu"]
 texture = ExtResource("2_74rnr")
@@ -364,3 +365,6 @@ position = Vector2(232, -106)
 
 [node name="Bottle3" parent="Bottles" instance=ExtResource("10_2yoxf")]
 position = Vector2(631, -10)
+
+[node name="Bouncy" parent="." instance=ExtResource("11_2afym")]
+position = Vector2(375, -38)

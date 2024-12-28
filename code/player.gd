@@ -55,3 +55,6 @@ func _physics_process(delta):
 	
 func activate_material(new_material: Material):
 	animated_sprite_2d.material = new_material
+	
+func apply_uppward_impulse(impulse_value: float):
+	velocity.y = -impulse_value
