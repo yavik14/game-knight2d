@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=4 uid="uid://b1qfrxi05tiot"]
+[gd_scene load_steps=19 format=4 uid="uid://b1qfrxi05tiot"]
 
 [ext_resource type="Script" path="res://code/game_manager.gd" id="1_42hhb"]
 [ext_resource type="PackedScene" uid="uid://ck4joc4obakjh" path="res://scene/player.tscn" id="1_fw30o"]
 [ext_resource type="Texture2D" uid="uid://da68nfv3ghcin" path="res://resources/sprites/world_tileset.png" id="2_74rnr"]
 [ext_resource type="FontFile" uid="uid://3q5y83cmbsde" path="res://resources/fonts/PixelOperator8-Bold.ttf" id="2_dwfvc"]
+[ext_resource type="PackedScene" uid="uid://cfs5myp17ts6b" path="res://scene/hud.tscn" id="3_54anl"]
 [ext_resource type="PackedScene" uid="uid://btvdn1ryvqcwy" path="res://scene/platform.tscn" id="3_mpnwb"]
 [ext_resource type="PackedScene" uid="uid://bb7dis4wa6u8i" path="res://scene/coin.tscn" id="4_7unln"]
 [ext_resource type="PackedScene" uid="uid://dw4m85bexuv5f" path="res://scene/death_zone.tscn" id="5_nbv1q"]
@@ -235,6 +236,9 @@ theme_override_font_sizes/font_size = 8
 text = "Has conseguido
 0 monedas."
 horizontal_alignment = 1
+
+[node name="HUD" parent="." instance=ExtResource("3_54anl")]
+visible = false
 
 [node name="Tilemap" type="Node2D" parent="."]
 
